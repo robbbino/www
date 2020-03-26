@@ -1,13 +1,12 @@
 <?php
 /**
  * Header file for the Twenty Twenty WordPress default theme.
+ *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
  * @since 1.0.0
- *
- * Modified for manskligamoten.com
  */
 
 ?><!DOCTYPE html>
@@ -27,9 +26,6 @@
 
 	<body <?php body_class(); ?>>
 
-
-
-
 		<?php
 		wp_body_open();
 		?>
@@ -41,6 +37,7 @@
 				<div class="header-titles-wrapper">
 
 					<?php
+
 					// Check whether the header search is activated in the customizer.
 					$enable_header_search = get_theme_mod( 'enable_header_search', true );
 
@@ -71,13 +68,110 @@
 
 					</div><!-- .header-titles -->
 
-<!-- There was a button toggle here. -->
+					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+						<span class="toggle-inner">
+							<span class="toggle-icon">
+								<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
+							</span>
+							<span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
+						</span>
+					</button><!-- .nav-toggle -->
 
 				</div><!-- .header-titles-wrapper -->
-			
-<!-- There was a .header-navigation-wrapper div here -->
 
-			</div><!-- .header-inner section-inner -->
+				<div class="header-navigation-wrapper">
+
+					<?php
+					if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+						?>
+
+							<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
+
+								<ul class="primary-menu reset-list-style">
+
+								<?php
+								if ( has_nav_menu( 'primary' ) ) {
+
+									wp_nav_menu(
+										array(
+											'container'  => '',
+											'items_wrap' => '%3$s',
+											'theme_location' => 'primary',
+										)
+									);
+
+								} elseif ( ! has_nav_menu( 'expanded' ) ) {
+
+									wp_list_pages(
+										array(
+											'match_menu_classes' => true,
+											'show_sub_menu_icons' => true,
+											'title_li' => false,
+											'walker'   => new TwentyTwenty_Walker_Page(),
+										)
+									);
+
+								}
+								?>
+
+								</ul>
+
+							</nav><!-- .primary-menu-wrapper -->
+
+						<?php
+					}
+
+					if ( true === $enable_header_search || has_nav_menu( 'expanded' ) ) {
+						?>
+
+						<div class="header-toggles hide-no-js">
+
+						<?php
+						if ( has_nav_menu( 'expanded' ) ) {
+							?>
+
+							<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+
+								<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+									<span class="toggle-inner">
+										<span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
+										<span class="toggle-icon">
+											<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
+										</span>
+									</span>
+								</button><!-- .nav-toggle -->
+
+							</div><!-- .nav-toggle-wrapper -->
+
+							<?php
+						}
+
+						if ( true === $enable_header_search ) {
+							?>
+
+							<div class="toggle-wrapper search-toggle-wrapper">
+
+								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+									<span class="toggle-inner">
+										<?php twentytwenty_the_theme_svg( 'search' ); ?>
+										<span class="toggle-text"><?php _e( 'Search', 'twentytwenty' ); ?></span>
+									</span>
+								</button><!-- .search-toggle -->
+
+							</div>
+
+							<?php
+						}
+						?>
+
+						</div><!-- .header-toggles -->
+						<?php
+					}
+					?>
+
+				</div><!-- .header-navigation-wrapper -->
+
+			</div><!-- .header-inner -->
 
 			<?php
 			// Output the search modal (if it is activated in the customizer).
@@ -88,80 +182,6 @@
 
 		</header><!-- #site-header -->
 
-		<section id="in-page-navigation" class="header-footer-group not-sticky" role="banner">
-		
-			<ul id="main-menu">
-				<?php
-					if ( has_nav_menu( 'primary' ) ) {
-						wp_nav_menu(
-							array(
-								'container'  => '',
-								'items_wrap' => '%3$s',
-								'theme_location' => 'primary',
-							)
-						);
-
-					} elseif ( ! has_nav_menu( 'expanded' ) ) {
-
-						wp_list_pages(
-							array(
-								'match_menu_classes' => true,
-								'show_sub_menu_icons' => true,
-								'title_li' => false,
-								'walker'   => new TwentyTwenty_Walker_Page(),
-							)
-						);
-					}
-				?>
-			 </ul> <!-- .menu -->
-		</section> <!-- #in-page-navigation -->
-			
-			
-	<script>
-	// When the user scrolls the page, execute stickyHeader
-	window.onscroll = function() {stickyHeader()};
-
-	// Get the header	
-	var header = document.getElementById("in-page-navigation");
-	
-	// Get the top heading to add padding
-	var headerGone = document.getElementById("site-header");
-	// Get the offset position of the navbar
-	var sticky = header.offsetTop;
-
-	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position. Also add/remove padding for the body
-	function stickyHeader() {
-		if (window.pageYOffset > sticky) {
-			header.classList.add("sticky");
-			headerGone.classList.add("sticky-offset");
-		} else {
-			header.classList.remove("sticky");
-			headerGone.classList.remove("sticky-offset");
-		}
-	}
-	
-//	if (localhost/manskligamoten/.test(window.location.href)) {
-//	document.getElementsByClassName('entry-header').style.display = 'none';
-//}
-
-/*	window.onload = function() {hideHeading()}
-
-	function hideHeading() {
-		var url = window.location.href;
-		if(url == "http://localhost/manskligamoten/") {
-//			document.getElementsByClassName('entry-header').style.display = 'none';
-			var x = document.getElementsByClassName("entry-header");
-			var i;
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-		}
-	}
-*/
-	</script>			
-
 		<?php
 		// Output the menu modal.
-	//	get_template_part( 'template-parts/modal-menu' );
-
-
+		get_template_part( 'template-parts/modal-menu' );
