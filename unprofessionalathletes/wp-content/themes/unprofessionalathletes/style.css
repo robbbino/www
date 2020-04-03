@@ -2593,7 +2593,8 @@ h2.entry-title {
 }
 
 .post-inner {
-	padding-top: 5rem;
+/*	padding-top: 5rem;
+*/
 }
 
 .reduced-spacing.missing-post-thumbnail .post-inner {
@@ -4351,29 +4352,37 @@ div.comment:first-of-type {
 
 .footer-top {
 	display: flex;
-	border-bottom: 0.1rem solid #dedfdf;
+	border-top: 0.1rem solid #dedfdf;
 	justify-content: space-between;
 }
 
 /* FOOTER MENU */
 
-.footer-menu {
+.footer-menu-unpro {
 	font-size: 1.8rem;
-	font-weight: 700;
-	letter-spacing: -0.0277em;
+/*	font-weight: 700;
+*/	letter-spacing: -0.0277em;
 }
 
-.footer-menu li {
+.footer-menu-unpro li {
 	line-height: 1.25;
 	margin: 0.25em 0 0 0;
 }
 
-.footer-menu a {
+.footer-menu-unpro > .menu-item-has-children > a {
+	font-weight: 700;
+}
+
+.sub-menu li {
+	margin-left: 0 !important;
+}
+
+.footer-menu-unpro a {
 	text-decoration: none;
 }
 
-.footer-menu a:hover,
-.footer-menu a:focus {
+.footer-menu-unpro a:hover,
+.footer-menu-unpro a:focus {
 	text-decoration: underline;
 }
 
@@ -5027,7 +5036,8 @@ a.to-the-top > * {
 	}
 
 	.post-inner {
-		padding-top: 8rem;
+/*		padding-top: 8rem;
+*/
 	}
 
 	/* POST FOOTER */
@@ -5471,12 +5481,12 @@ a.to-the-top > * {
 		padding: 3.7rem 0;
 	}
 
-	.footer-menu {
+	.footer-menu-unpro {
 		font-size: 2.4rem;
 		margin: -0.8rem 0 0 -1.6rem;
 	}
 
-	.footer-menu li {
+	.footer-menu-unpro li {
 		margin: 0.8rem 0 0 1.6rem;
 	}
 
@@ -5997,7 +6007,7 @@ a.to-the-top > * {
 		align-items: center;
 	}
 
-	.footer-menu {
+	.footer-menu-unpro {
 		align-items: baseline;
 		display: flex;
 		justify-content: flex-start;
@@ -6006,7 +6016,7 @@ a.to-the-top > * {
 		margin: -1.2rem 0 0 -2.4rem;
 	}
 
-	.footer-menu li {
+	.footer-menu-unpro li {
 		margin: 1.2rem 0 0 2.4rem;
 	}
 }
@@ -6060,8 +6070,8 @@ a.to-the-top > * {
 	/* Template: Cover Template -------------- */
 
 	.cover-header + .post-inner {
-		padding-top: 10rem;
-	}
+/*		padding-top: 10rem;
+*/	}
 
 	/* Post: Archive ------------------------- */
 
@@ -6114,9 +6124,9 @@ a.to-the-top > * {
 	/* ALIGNMENT CLASSES */
 
 	.entry-content > .alignfull {
-		margin-bottom: 10rem;
+/*		margin-bottom: 10rem;
 		margin-top: 10rem;
-	}
+*/	}
 
 	[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > .alignleft,
 	[class*="wp-block"].alignwide.has-background [class*="__inner-container"] > p .alignleft,
@@ -6166,12 +6176,12 @@ a.to-the-top > * {
 
 	/* Site Footer --------------------------- */
 
-	.footer-menu {
+	.footer-menu-unpro {
 		font-size: 2.4rem;
 		margin: -1.5rem 0 0 -3rem;
 	}
 
-	.footer-menu li {
+	.footer-menu-unpro li {
 		margin: 1.5rem 0 0 3rem;
 	}
 
@@ -6377,10 +6387,76 @@ a.to-the-top > * {
 
 
 .entry-header-unpro {
-	padding: 4rem 0;
+	padding: 0;
 }
 
 .footer-unpro {
 	
 }
 
+/* Customised header block for home page */
+
+
+/* Desktop Settings */
+@media (min-width: 1220px) {
+	.page-intro-unpro-bottom-left {
+		display: block;
+/*		max-height: 70rem;
+		overflow: hidden;
+*/		margin: 0;
+	}
+	
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content {
+		position: absolute;
+		bottom: 7rem;
+		left:10rem;
+		padding: 0 !important;
+		width: calc(100% - 8rem);
+		max-width: 60%;
+		margin: 0 auto;
+	}
+
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content h2 {
+		display: inline;
+		background-color: rgba(0, 85, 0, 0.7);
+		color: #FFFFFF;
+		margin-right: 100%;
+		line-height: 10rem;
+	}
+
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content p {
+		display: inline;
+		background-color: rgba(0, 85, 0, 0.7);
+		color: #FFFFFF;
+		line-height: 1.25;
+	}
+}
+
+
+/* Customise how categories are displayed on the home page ("Categories" must be added with "Wide" setting in WP Admin) */
+.wp-block-categories.wp-block-categories-list.alignwide {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.wp-block-categories.wp-block-categories-list.alignwide li {
+	width: 100%;
+	text-align: center;
+}
+
+.wp-block-categories.wp-block-categories-list.alignwide li a {
+	font-weight: 400 !important;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 480px) {
+	
+
+	.wp-block-categories.wp-block-categories-list.alignwide li {
+		width: 33%;
+		min-width: 20rem;
+		padding: 0 2rem;
+		text-align: center;
+	}
+}
