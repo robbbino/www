@@ -36,12 +36,12 @@ if ( $has_footer_menu || $has_social_menu || $has_sidebar_1 || $has_sidebar_2 ) 
 
 						<nav aria-label="<?php esc_attr_e( 'Footer', 'twentytwenty' ); ?>" role="navigation" class="footer-menu-wrapper">
 
-							<ul class="footer-menu reset-list-style">
+							<ul class="footer-menu-unpro reset-list-style">
 								<?php
 								wp_nav_menu(
 									array(
 										'container'      => '',
-										'depth'          => 1,
+										'depth'          => 2,
 										'items_wrap'     => '%3$s',
 										'theme_location' => 'footer',
 									)
