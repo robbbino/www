@@ -326,7 +326,8 @@ h2,
 
 h3,
 .heading-size-3 {
-	font-size: 2.8rem;
+	font-size: 3rem;
+    font-weight: 400;
 }
 
 h4,
@@ -3528,7 +3529,7 @@ figure.wp-block-table.is-style-stripes {
 .entry-content ul,
 .entry-content dl,
 .entry-content dt {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	letter-spacing: normal;
 }
 
@@ -4117,7 +4118,7 @@ div.comment:first-of-type {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	letter-spacing: normal;
 }
 
@@ -6386,6 +6387,13 @@ a.to-the-top > * {
 /* -------------------------------------------------------------------------- */
 
 
+
+
+/* Change default text colour to grey */
+body {
+	color: #696969 !important;
+}
+
 .entry-header-unpro {
 	padding: 0;
 }
@@ -6394,44 +6402,37 @@ a.to-the-top > * {
 	
 }
 
+
+/*		HOME PAGE
+/* -------------------------------------------------------------------------- */
+
+
+
 /* Customised header block for home page */
 
-
-/* Desktop Settings */
-@media (min-width: 1220px) {
-	.page-intro-unpro-bottom-left {
-		display: block;
-/*		max-height: 70rem;
-		overflow: hidden;
-*/		margin: 0;
-	}
-	
-	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content {
-		position: absolute;
-		bottom: 7rem;
-		left:10rem;
-		padding: 0 !important;
-		width: calc(100% - 8rem);
-		max-width: 60%;
-		margin: 0 auto;
-	}
-
-	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content h2 {
-		display: inline;
-		background-color: rgba(0, 85, 0, 0.7);
-		color: #FFFFFF;
-		margin-right: 100%;
-		line-height: 10rem;
-	}
-
-	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content p {
-		display: inline;
-		background-color: rgba(0, 85, 0, 0.7);
-		color: #FFFFFF;
-		line-height: 1.25;
-	}
+	/* Add this class to the hero banner */
+.page-intro-unpro-bottom-left {
+	display: block;
+/*	max-height: 70rem;
+	overflow: hidden;
+*/	margin: 0;
 }
 
+/* Set the max height of the image */
+.page-intro-unpro-bottom-left figure {
+	max-height: 60vh;
+	overflow: hidden;
+	/* Center crop image */
+	display: flex; 
+	justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.page-intro-unpro-bottom-left figure img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
 
 /* Customise how categories are displayed on the home page ("Categories" must be added with "Wide" setting in WP Admin) */
 .wp-block-categories.wp-block-categories-list.alignwide {
@@ -6449,14 +6450,128 @@ a.to-the-top > * {
 	font-weight: 400 !important;
 }
 
+/* Change the look of recent posts */
+.wp-show-posts-columns {
+	margin: 0 auto !important;
+}
+
+.wp-show-posts-inner {
+	box-shadow: 0.2rem 0.2rem 1rem 0.1rem #dedede;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	margin: 0 1rem 1rem !important;
+}
+
+.wp-show-posts-entry-header, .wp-show-posts-entry-summary, .wp-show-posts-entry-meta-below-post, .wpsp-read-more {
+	margin:2rem 2rem !important;
+}
+
+.wp-show-posts-entry-meta {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.6rem;
+}
+
+/*
+.wp-show-posts-entry-summary p {
+	display: inline-block;
+	width: calc(100%);
+	max-height: 12.6rem;
+	overflow: hidden;
+}
+*/
+
+.wp-show-posts-entry-meta-below-post {
+	margin-top: 1.2rem;
+}
+
+.wp-show-posts-author a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.wp-show-posts-image a {
+		/* Center crop image */
+	display: flex; 
+	justify-content: center;
+    align-items: center;
+    overflow: hidden;
+	height: 30rem;
+}
+
+.wp-show-posts-image a img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.wp-show-posts-separator {
+	display: none;
+}
+
+.wp-show-posts-posted-on a {
+	text-decoration: none;
+	font-weight: 700;
+}
+
+br {
+	display: none;
+}
+
+/* Desktop Settings */
+@media (min-width: 1220px) {
+	/*Hero banner */
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content {
+		position: absolute;
+		bottom: 7rem;
+		left:10rem;
+		padding: 0 !important;
+		width: calc(100% - 8rem);
+		max-width: 60%;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content h2 {
+		display: inline;
+		background-color: rgba(0, 85, 0, 0.7);
+		color: #FFFFFF;
+		margin-right: 100%;
+		line-height: 10rem;
+	}
+
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content p {
+		display: inline;
+		background-color: rgba(0, 85, 0, 0.7);
+		color: #FFFFFF;
+		line-height: 1.25;
+	}
+
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content p a {
+		color: #FFFFFF !important;
+	}
+
+	/* Recent Posts on Desktop */
+	.wp-show-posts-columns {
+		max-width: calc(100% - 20rem) !important;
+	}
+}
+
+
 /* Tablet and Desktop */
 @media (min-width: 480px) {
 	
-
 	.wp-block-categories.wp-block-categories-list.alignwide li {
 		width: 33%;
 		min-width: 20rem;
 		padding: 0 2rem;
 		text-align: center;
 	}
+	
+		/* Recent Posts on Tablet */
+/*	.wp-show-posts-columns {
+		max-width: calc(100% - 8rem) !important;
+	}
+*/
 }
+
