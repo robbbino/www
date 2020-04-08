@@ -326,7 +326,8 @@ h2,
 
 h3,
 .heading-size-3 {
-	font-size: 2.8rem;
+	font-size: 3rem;
+    font-weight: 400;
 }
 
 h4,
@@ -6386,6 +6387,8 @@ a.to-the-top > * {
 /* -------------------------------------------------------------------------- */
 
 
+
+
 /* Change default text colour to grey */
 body {
 	color: #696969 !important;
@@ -6398,6 +6401,12 @@ body {
 .footer-unpro {
 	
 }
+
+
+/*		HOME PAGE
+/* -------------------------------------------------------------------------- */
+
+
 
 /* Customised header block for home page */
 
@@ -6425,10 +6434,36 @@ body {
     min-height: 100%;
 }
 
+/* Customise how categories are displayed on the home page ("Categories" must be added with "Wide" setting in WP Admin) */
+.wp-block-categories.wp-block-categories-list.alignwide {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.wp-block-categories.wp-block-categories-list.alignwide li {
+	width: 100%;
+	text-align: center;
+}
+
+.wp-block-categories.wp-block-categories-list.alignwide li a {
+	font-weight: 400 !important;
+}
+
 /* Change the look of recent posts */
 .wp-show-posts-columns {
 	margin: 0 auto !important;
-	max-width: 120rem !important;
+}
+
+.wp-show-posts-inner {
+	box-shadow: 0.2rem 0.2rem 1rem 0.1rem #dedede;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	margin: 0 1rem 1rem !important;
+}
+
+.wp-show-posts-entry-header, .wp-show-posts-entry-summary, .wp-show-posts-entry-meta-below-post, .wpsp-read-more {
+	margin:2rem 2rem !important;
 }
 
 .wp-show-posts-entry-meta {
@@ -6436,6 +6471,15 @@ body {
 	justify-content: space-between;
 	font-size: 1.6rem;
 }
+
+/*
+.wp-show-posts-entry-summary p {
+	display: inline-block;
+	width: calc(100%);
+	max-height: 12.6rem;
+	overflow: hidden;
+}
+*/
 
 .wp-show-posts-entry-meta-below-post {
 	margin-top: 1.2rem;
@@ -6470,17 +6514,6 @@ body {
 	font-weight: 700;
 }
 
-.wp-show-posts-entry-summary {
-	display: inline;
-}
-.wp-show-posts-entry-summary p {
-	display: inline;
-}
-
-.wpsp-read-more {
-	display:inline;
-}
-
 br {
 	display: none;
 }
@@ -6513,34 +6546,32 @@ br {
 		color: #FFFFFF;
 		line-height: 1.25;
 	}
+
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content p a {
+		color: #FFFFFF !important;
+	}
+
+	/* Recent Posts on Desktop */
+	.wp-show-posts-columns {
+		max-width: calc(100% - 20rem) !important;
+	}
 }
 
-
-/* Customise how categories are displayed on the home page ("Categories" must be added with "Wide" setting in WP Admin) */
-.wp-block-categories.wp-block-categories-list.alignwide {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-.wp-block-categories.wp-block-categories-list.alignwide li {
-	width: 100%;
-	text-align: center;
-}
-
-.wp-block-categories.wp-block-categories-list.alignwide li a {
-	font-weight: 400 !important;
-}
 
 /* Tablet and Desktop */
 @media (min-width: 480px) {
 	
-
 	.wp-block-categories.wp-block-categories-list.alignwide li {
 		width: 33%;
 		min-width: 20rem;
 		padding: 0 2rem;
 		text-align: center;
 	}
+	
+		/* Recent Posts on Tablet */
+/*	.wp-show-posts-columns {
+		max-width: calc(100% - 8rem) !important;
+	}
+*/
 }
 
