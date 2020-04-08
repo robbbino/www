@@ -3528,7 +3528,7 @@ figure.wp-block-table.is-style-stripes {
 .entry-content ul,
 .entry-content dl,
 .entry-content dt {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	letter-spacing: normal;
 }
 
@@ -4117,7 +4117,7 @@ div.comment:first-of-type {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	letter-spacing: normal;
 }
 
@@ -6386,6 +6386,11 @@ a.to-the-top > * {
 /* -------------------------------------------------------------------------- */
 
 
+/* Change default text colour to grey */
+body {
+	color: #696969 !important;
+}
+
 .entry-header-unpro {
 	padding: 0;
 }
@@ -6396,16 +6401,93 @@ a.to-the-top > * {
 
 /* Customised header block for home page */
 
+	/* Add this class to the hero banner */
+.page-intro-unpro-bottom-left {
+	display: block;
+/*	max-height: 70rem;
+	overflow: hidden;
+*/	margin: 0;
+}
+
+/* Set the max height of the image */
+.page-intro-unpro-bottom-left figure {
+	max-height: 60vh;
+	overflow: hidden;
+	/* Center crop image */
+	display: flex; 
+	justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.page-intro-unpro-bottom-left figure img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+/* Change the look of recent posts */
+.wp-show-posts-columns {
+	margin: 0 auto !important;
+	max-width: 120rem !important;
+}
+
+.wp-show-posts-entry-meta {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.6rem;
+}
+
+.wp-show-posts-entry-meta-below-post {
+	margin-top: 1.2rem;
+}
+
+.wp-show-posts-author a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.wp-show-posts-image a {
+		/* Center crop image */
+	display: flex; 
+	justify-content: center;
+    align-items: center;
+    overflow: hidden;
+	height: 30rem;
+}
+
+.wp-show-posts-image a img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.wp-show-posts-separator {
+	display: none;
+}
+
+.wp-show-posts-posted-on a {
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.wp-show-posts-entry-summary {
+	display: inline;
+}
+.wp-show-posts-entry-summary p {
+	display: inline;
+}
+
+.wpsp-read-more {
+	display:inline;
+}
+
+br {
+	display: none;
+}
 
 /* Desktop Settings */
 @media (min-width: 1220px) {
-	.page-intro-unpro-bottom-left {
-		display: block;
-/*		max-height: 70rem;
-		overflow: hidden;
-*/		margin: 0;
-	}
-	
+	/*Hero banner */
 	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content {
 		position: absolute;
 		bottom: 7rem;
@@ -6414,6 +6496,7 @@ a.to-the-top > * {
 		width: calc(100% - 8rem);
 		max-width: 60%;
 		margin: 0 auto;
+		display: block;
 	}
 
 	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content h2 {
@@ -6460,3 +6543,4 @@ a.to-the-top > * {
 		text-align: center;
 	}
 }
+
