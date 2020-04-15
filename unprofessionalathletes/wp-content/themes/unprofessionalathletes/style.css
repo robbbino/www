@@ -6532,14 +6532,20 @@ br {
 		display: block;
 	}
 
+
 	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content h2 {
 		display: inline;
 		background-color: rgba(0, 85, 0, 0.7);
 		color: #FFFFFF;
-		margin-right: 100%;
-		line-height: 10rem;
+		line-height: 1;
 	}
 
+	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content h2::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	
 	.has-media-on-the-right.page-intro-unpro-bottom-left .wp-block-media-text__content p {
 		display: inline;
 		background-color: rgba(0, 85, 0, 0.7);
