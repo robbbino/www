@@ -21,7 +21,6 @@
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
-
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -31,6 +30,7 @@
 		?>
 
 		<header id="site-header" class="header-footer-group" role="banner">
+				
 
 			<div class="header-inner section-inner">
 
