@@ -119,10 +119,6 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 	color: #FFF !important;
 }
 
-.section {
-	padding-top: 10rem;
-}
-
 #ingredients {
 	background-color: #005500;
 	width: 100%;
