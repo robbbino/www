@@ -28,20 +28,32 @@
       ],
     }
     </script>
-	?>
+
+	
+
 <div class="recipe-content">
-	<h3><?php block_field( 'title' ); ?></h3>
-	<p class="servings"><?php block_field( 'servings' ); ?></p>
-	<p><?php block_field( 'summary' ); ?></p>
-	<p class="prep-time"><?php block_field( 'preparation-time' ); ?></p>
-	<p><?php block_field( 'cooking-time' ); ?></p>
-	<div class="ingredients-list">
-		<h4>Ingredients</h4>
-		<p>Just for testing purposes</p>
+	<div id="cooking-time">
+		<img src="C:\Users\robin\OneDrive\Digital Spider\Unprofessional Athletes\Recipes\Mock-up\Icon ionic-md-time@2x.png" alt="Time icon">
+		<h5>Preparation time</h5>
+		<p><?php block_field( 'prep-time' ); ?></p>
+		<h5>Cooking time</h5>
+		<p><?php block_field( 'cook-time' ); ?></p>
+	</div>
+	
+	<p><?php block_field( 'description' ); ?></p>
+	
+	<ul>
+		<li>Ingredients</li>
+		<li>Directions</li>
+	</ul>
+	
+	<div id="ingredienst-list">
+		<h3>Ingredients</h3>
 		<?php block_field( 'ingredients' ); ?>
 	</div>
-		<div class="instructions">
-		<h4>Instructions</h4>
+	
+	<div id="directions-list">
+		<h3>Directions</h3>
 		<?php block_field( 'instructions' ); ?>
 	</div>
 </div>
