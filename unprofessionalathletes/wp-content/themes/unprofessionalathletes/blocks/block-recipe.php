@@ -1,22 +1,25 @@
-    <script type="application/ld+json">
+
+	
+	
+ <script type="application/ld+json">
 	
 	<!-- Set up all block fields as variable and error check them before adding them to the schema. -->
     {
       "@context": "https://schema.org/",
       "@type": "Recipe",
-      "name": "<?php block_field( 'title' ); ?>",
+      "name": "<?php block_field( 'title' ) ?>",
       "image": [
-        "<?php block_field( 'image' ); ?>"
+        "<?php block_field( 'image' ) ?>"
       ],
       "author": {
         "@type": "Organization",
-        "name": "<?php block_field( 'author' ); ?>"
+        "name": "Unprofessional Athletes"
       },
       "datePublished": "<?php echo get_the_date( 'Y-m-d' ); ?>",
-      "description": "This coffee cake is awesome and perfect for parties.",
-      "prepTime": "PT20M",
-      "cookTime": "PT30M",
-      "totalTime": "PT50M",
+      "description": "<?php block_field( 'summary' ) ?>",
+      "prepTime": "<?php block_field( 'prep-time' ) ?>",
+      "cookTime": "<?php block_field( 'cook-time' ) ?>",
+      "totalTime": "<?php block_field( 'total-time' )",
       "keywords": "cake for a party, coffee",
       "recipeYield": "10",
       "recipeCategory": "Dessert",
@@ -105,6 +108,7 @@
       }
     }
     </script>
+	?>
 <div class="recipe-content">
 	<h3><?php block_field( 'title' ); ?></h3>
 	<p class="servings"><?php block_field( 'servings' ); ?></p>

@@ -755,3 +755,16 @@ function twentytwenty_get_elements_array() {
 	*/
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+
+
+// Some extra functions to help populate structured data for recipes
+
+function totalRecipeTime() {
+	$prepTime = block_field( 'prep-time' ) + block_field( 'cook-time' );
+//	$cookTime = block_field( 'cook-time' ); 
+	settype($prepTime, "integer");
+//	settype ($cookTime, "integer");
+	$totalTimeInMinutes = $prepTime;
+		return $prepTime;
+};
