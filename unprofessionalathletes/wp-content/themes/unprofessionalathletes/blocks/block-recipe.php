@@ -168,7 +168,7 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 <div class="recipe-content">
 	<div id="cooking-time">
 		<figure class="icon-container">
-			<img src="/unprofessionalathletes/wp-content/uploads/2020/04/time-icon.png" alt="Time icon">
+			<img src="/wp-content/uploads/2020/04/time-icon.png" alt="Time icon">
 		</figure>
 		<div class="time-container">
 			<h5>Preparation</h5>
