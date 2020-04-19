@@ -34,6 +34,10 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
     }
     </script>
 <style>
+
+.featured-media {
+	display:none;
+}
 .recipe-content {
 	width: 100% !important;
 }
@@ -129,7 +133,7 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	width: calc(100% - 8rem);
+	width: 40rem;
 	margin: auto;
 }
 
@@ -162,10 +166,90 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 	
 }
 
+/* Desktop */
+@media (min-width: 1220px) {
+	.recipe-content {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-content: space-between;
+		margin-top: 4rem;
+	}
+	#recipe-image {
+		width: 45rem;
+		height: 45rem;
+	}
+	
+	#recipe-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	#cooking-time {
+		position: absolute;
+		right: 0;
+		display:block;
+		padding-top:2rem;
+		width: 17rem;
+	}
+	
+	#description {
+		width: 75rem;
+		margin: 0;
+		padding: 0 20rem 2rem 5rem;
+		border-bottom: 1px solid #005500;
+	}
+	
+	#recipe-in-page-nav {
+		display: none;
+	}
+	
+	#ingredients {
+		position: absolute;
+		top: 45rem;
+		left:0;
+		width:45rem;
+	}
+	
+	#ingredients h3, #directions h3 {
+		text-align: left;
+		margin-left: 3.5rem;
+	}
+	
+	.ingredients-list {
+		display: block;
+	}
+	
+	#ingredients p {
+		font-size: 2rem;
+		line-height: 2;
+	}
+	
+	#directions {
+		width: 60%;
+		margin-left: 45rem;
+	}
+	
+	#directions h3 {
+		margin-left: 4.5rem;
+	}
+	
+	.section {
+		margin: 0;
+		padding: 0 5rem 5rem;
+	}
+	
+}
+
+
 </style>
 	
 
 <div class="recipe-content">
+	<div id="recipe-image">
+	<img src="<?php block_field( 'image' ); ?>" />
+	</div>
 	<div id="cooking-time">
 		<figure class="icon-container">
 			<img src="/wp-content/uploads/2020/04/time-icon.png" alt="Time icon">
@@ -188,7 +272,7 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 		<li><a href="#ingredients" class="active">Ingredients</a></li>
 		<li><a href="#directions">Directions</a></li>
 	</ul>
-	
+
 	<div id="ingredients" class="section">
 		<h3>Ingredients</h3>
 		<div class="ingredients-list">
