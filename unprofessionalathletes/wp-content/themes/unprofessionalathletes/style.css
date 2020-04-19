@@ -317,8 +317,9 @@ h6,
 h1,
 .heading-size-1 {
 	font-size: 4rem;
-	font-weight: 800;
+	font-weight: 400;
 	line-height: 1.138888889;
+	color: #005500;
 }
 
 h2,
