@@ -755,3 +755,37 @@ function twentytwenty_get_elements_array() {
 	*/
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+
+
+// Some extra functions to help populate structured data for recipes
+
+function structuredIngredientsList() {
+	// Remove all blank lines
+	$ingredients = str_replace( "\n", "", block_value( 'ingredients' ));
+	// Replace separators (</p><p>) with correct syntax (",\n)
+	$str = str_replace( "</p><p>", "\",\n\"", $ingredients);
+	// Remove remaining P tags
+	$structuredIngredients = strip_tags($str);
+	echo $structuredIngredients;
+};
+
+
+function recipeInstructions() {
+	// Remove line breaks from string
+	$instructions = str_replace( "\n", "", block_value( 'instructions' ));
+	// Replace separators (</p><p>) with new separator (###)
+	$str = str_replace( "</p><p>", "###", $instructions);
+	// Remove remaining P tags
+	$structuredInstructions = strip_tags($str);
+	// Create an array from clean string
+	$instrArray = explode ('###', $structuredInstructions);
+	// Create a new entry for each step
+	foreach ($instrArray as $item) {
+		echo 
+        "{
+          \"@type\": \"HowToStep\",
+          \"text\": \"", $item ,"\",
+        },\n";
+	};
+};
