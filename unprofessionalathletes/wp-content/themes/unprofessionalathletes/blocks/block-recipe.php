@@ -124,9 +124,9 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 }
 
 #ingredients {
-	background-color: #005500;
 	width: 100%;
-	color: #FFF;
+	background-color: #efefef;
+	color: #005500;
 }
 
 .ingredients-list {
@@ -192,13 +192,13 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 		display:block;
 		padding-top:2rem;
 		width: 17rem;
+		border-radius: 0 0 0 5rem;
 	}
 	
 	#description {
 		width: 75rem;
 		margin: 0;
 		padding: 0 20rem 2rem 5rem;
-		border-bottom: 1px solid #005500;
 	}
 	
 	#recipe-in-page-nav {
@@ -210,6 +210,7 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 		top: 45rem;
 		left:0;
 		width:45rem;
+		border-radius: 0 0 5rem 5rem;
 	}
 	
 	#ingredients h3, #directions h3 {
