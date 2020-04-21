@@ -6635,6 +6635,7 @@ br {
 	}
 }
 
+/* Alternate left and right positions */
 .archive-post-listing:nth-child(even) {
 	flex-direction: row;
 }
@@ -6657,7 +6658,7 @@ br {
 	width: 100%;
 }
 
-/* Make headings smaller on mobile only */
+/* Make text smaller on mobile only */
 @media (max-width: 480px) {
 	.archive-post-listing h2 {
 		font-size: 2rem;
@@ -6688,6 +6689,6 @@ br {
 	height: 100%;
 }
 
-.archive-post-listing figcaption, .archive-post-listing .entry-categories, .archive-post-listing .meta-icon {
+.archive-post-listing .post-comment-link, .archive-post-listing .post-sticky, .archive-post-listing figcaption, .archive-post-listing .entry-categories, .archive-post-listing .meta-icon {
 	display: none;
 }
