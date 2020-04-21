@@ -758,6 +758,18 @@ function twentytwenty_get_elements_array() {
 
 
 
+// ------------------------ Additional Functions -------------------------- //
+
+// Remove "Category: " from category pages
+
+function prefix_category_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    }
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'prefix_category_title' );
+
 // Some extra functions to help populate structured data for recipes
 
 function structuredIngredientsList() {

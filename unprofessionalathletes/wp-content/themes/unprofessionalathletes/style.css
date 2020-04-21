@@ -2369,7 +2369,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 .archive-header {
 	background-color: #fff;
-	padding: 4rem 0;
+	padding: 2rem 0;
 }
 
 .reduced-spacing .archive-header {
@@ -2377,8 +2377,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 }
 
 .archive-title {
-	font-size: 2.4rem;
-	font-weight: 700;
+	font-size: 3rem;
 	letter-spacing: -0.026666667em;
 	margin: 0;
 }
@@ -4969,11 +4968,11 @@ a.to-the-top > * {
 	}
 
 	/* Post: Archive ------------------------- */
-
+/* Remove excess padding on tablet and desktop
 	.archive-header {
 		padding: 8rem 0;
 	}
-
+*/
 	.reduced-spacing .archive-header {
 		padding-bottom: 3rem;
 	}
@@ -6394,12 +6393,24 @@ a.to-the-top > * {
 /*	18. Custom CSS (Unprofessional Athletes)
 /* -------------------------------------------------------------------------- */
 
-
+/* Override defaults */
 
 
 /* Change default text colour to grey */
 body {
 	color: #696969 !important;
+}
+
+/* Remove yellow background on page headings */
+.archive-header {
+	background-color: #FFF !important;
+	color: #005500 !important;
+	top: 0;
+}
+
+.archive-title {
+	text-transform: uppercase;
+	color: #005500;
 }
 
 .entry-header-unpro {
