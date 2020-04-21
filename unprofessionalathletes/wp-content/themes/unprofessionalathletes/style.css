@@ -2577,6 +2577,7 @@ h2.entry-title {
 	position: relative;
 	left: calc(50% - 50vw);
 	width: 100vw;
+	max-height: 80vh;
 }
 
 .singular .featured-media::before {
@@ -2592,6 +2593,8 @@ h2.entry-title {
 
 .featured-media img {
 	margin: 0 auto;
+	max-height: inherit;
+	object-fit: cover;
 }
 
 .featured-media figcaption {
