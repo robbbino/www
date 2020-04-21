@@ -73,7 +73,7 @@
 							twentytwenty_site_logo();
 
 							// Site description.
-//							twentytwenty_site_description();
+							twentytwenty_site_description();
 						?>
 
 					</div><!-- .header-titles -->

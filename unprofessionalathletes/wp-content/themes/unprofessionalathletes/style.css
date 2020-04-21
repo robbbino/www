@@ -6411,6 +6411,13 @@ body {
 	top: 0;
 }
 
+
+/* Remove site description form header */
+
+.site-description {
+	display: none;
+}
+
 .archive-title {
 	text-transform: uppercase;
 	color: #005500;
