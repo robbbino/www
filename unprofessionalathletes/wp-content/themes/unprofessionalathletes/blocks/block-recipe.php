@@ -79,6 +79,9 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 	margin: 2rem;
 }
 
+#description {
+	font-style: italic;
+}
 
 #description, .section {
 	width: calc(100% - 8rem);
@@ -198,6 +201,7 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
 	#description {
 		width: 75rem;
 		margin: 0;
+		font-size: smaller;
 		padding: 0 20rem 2rem 5rem;
 	}
 	
