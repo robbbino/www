@@ -6615,6 +6615,7 @@ br {
 	background-color: #efefef;
 	padding: 0 !important;
 	min-height: 15rem;
+	max-height: 50rem;
 }
 
 /* Min-height increase on Desktop */
