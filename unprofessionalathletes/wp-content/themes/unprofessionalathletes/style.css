@@ -2369,7 +2369,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 .archive-header {
 	background-color: #fff;
-	padding: 4rem 0;
+	padding: 2rem 0;
 }
 
 .reduced-spacing .archive-header {
@@ -2377,8 +2377,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 }
 
 .archive-title {
-	font-size: 2.4rem;
-	font-weight: 700;
+	font-size: 3rem;
 	letter-spacing: -0.026666667em;
 	margin: 0;
 }
@@ -4969,11 +4968,11 @@ a.to-the-top > * {
 	}
 
 	/* Post: Archive ------------------------- */
-
+/* Remove excess padding on tablet and desktop
 	.archive-header {
 		padding: 8rem 0;
 	}
-
+*/
 	.reduced-spacing .archive-header {
 		padding-bottom: 3rem;
 	}
@@ -6394,12 +6393,28 @@ a.to-the-top > * {
 /*	18. Custom CSS (Unprofessional Athletes)
 /* -------------------------------------------------------------------------- */
 
-
+/* Override defaults */
 
 
 /* Change default text colour to grey */
 body {
 	color: #696969 !important;
+}
+
+/* Remove yellow background on page headings */
+.archive-header {
+	background-color: #FFF !important;
+	color: #005500 !important;
+	top: 0;
+}
+
+.archive-title {
+	text-transform: uppercase;
+	color: #005500;
+}
+
+.archive-subtitle {
+	font-style: italic;
 }
 
 .entry-header-unpro {
@@ -6589,3 +6604,78 @@ br {
 */
 }
 
+
+/*		ARCHIVE PAGE
+/* -------------------------------------------------------------------------- */
+
+.archive-post-listing {
+	display: flex;
+	flex-direction:row-reverse;
+	margin: 0;
+	background-color: #efefef;
+	padding: 0 !important;
+	min-height: 15rem;
+}
+
+/* Min-height increase on Desktop */
+@media (min-width: 1220px) {
+	.archive-post-listing {
+		min-height: 30rem;
+	}
+}
+
+.archive-post-listing:nth-child(even) {
+	flex-direction: row;
+}
+
+.archive-post-listing .featured-media, .archive-post-listing .entry-header-unpro {
+	width: 50%;
+	margin: 0;
+}
+
+.archive-post-listing .entry-header-unpro {
+	width: 50%;
+	margin: 0;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	padding: 2rem 0;
+}
+
+.archive-post-listing .entry-header-inner {
+	width: 100%;
+}
+
+/* Make headings smaller on mobile only */
+@media (max-width: 480px) {
+	.archive-post-listing h2 {
+		font-size: 2rem;
+		margin: 0.5rem;
+	}
+}
+.archive-post-listing .post-meta {
+	font-size: 1rem;
+}
+
+.archive-post-listing .post-meta-wrapper {
+	margin-top: 0;
+}
+
+.archive-post-listing .post-comment-link, .archive-post-listing .post-sticky {
+	display: none;
+}
+
+.archive-post-listing img {
+	object-fit: cover;
+    height: 100%;
+}
+
+.archive-post-listing .featured-media-inner {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.archive-post-listing figcaption, .archive-post-listing .entry-categories, .archive-post-listing .meta-icon {
+	display: none;
+}
