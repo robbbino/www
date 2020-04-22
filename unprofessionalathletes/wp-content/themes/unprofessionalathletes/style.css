@@ -2392,11 +2392,11 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 
 /* Posts ------------------------------------- */
-
+/*
 body:not(.singular) main > article:first-of-type {
 	padding: 4rem 0 0;
 }
-
+*/
 
 /* Search Results ---------------------------- */
 
@@ -5001,10 +5001,10 @@ a.to-the-top > * {
 		line-height: 20rem;
 	}
 
-	body:not(.singular) main > article:first-of-type {
+/*	body:not(.singular) main > article:first-of-type {
 		padding: 8rem 0 0;
 	}
-
+*/
 	h2.entry-title {
 		font-size: 6.4rem;
 	}
