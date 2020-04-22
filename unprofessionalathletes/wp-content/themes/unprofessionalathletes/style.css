@@ -4821,7 +4821,7 @@ a.to-the-top > * {
 	}
 
 	.site-description {
-		display: block;
+		display: none;
 	}
 
 	.site-logo img {
