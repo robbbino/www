@@ -26,16 +26,6 @@
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
-		<meta property="og:image" content="<?php 
-		$featuredImageIcon = get_the_post_thumbnail_url();
-			if (isset($featuredImageIcon)) {
-				echo $featuredImageIcon;
-			}?>" />
-		<meta name="twitter:image" content="<?php 
-		$featuredImageIcon = get_the_post_thumbnail_url();
-			if (isset($featuredImageIcon)) {
-				echo $featuredImageIcon;
-			}?>" />
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
