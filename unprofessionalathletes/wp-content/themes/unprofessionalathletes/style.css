@@ -1,6 +1,6 @@
 
 /*
-Theme Name: Unrpofessional Athletes
+Theme Name: Unprofessional Athletes
 Text Domain: twentytwenty
 Version: 1.1
 Requires at least: 4.7
@@ -4821,7 +4821,7 @@ a.to-the-top > * {
 	}
 
 	.site-description {
-		display: block;
+		display: none;
 	}
 
 	.site-logo img {
