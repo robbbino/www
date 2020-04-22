@@ -1,7 +1,6 @@
-/* Updated 19 April 2020 */
 
 /*
-Theme Name: Twenty Twenty
+Theme Name: Unrpofessional Athletes
 Text Domain: twentytwenty
 Version: 1.1
 Requires at least: 4.7
@@ -308,7 +307,7 @@ h6,
 .faux-heading {
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
-	font-weight: 700;
+	font-weight: 400;
 	letter-spacing: -0.0415625em;
 	line-height: 1.25;
 	margin: 3.5rem 0 2rem;
@@ -325,6 +324,11 @@ h1,
 h2,
 .heading-size-2 {
 	font-size: 3.6rem;
+	color: #005500
+}
+
+h2 a, .heading-size-1 a {
+	color: #005500 !important; /* This deals with the mysterious black override that happens when an a tag is in a h2 */
 }
 
 h3,
@@ -4981,7 +4985,8 @@ a.to-the-top > * {
 	}
 
 	.archive-title {
-		font-size: 3.2rem;
+		font-size: 10rem;
+		line-height: 20rem;
 	}
 
 	body:not(.singular) main > article:first-of-type {
@@ -6411,6 +6416,13 @@ body {
 	top: 0;
 }
 
+
+/* Remove site description form header */
+
+.site-description {
+	display: none;
+}
+
 .archive-title {
 	text-transform: uppercase;
 	color: #005500;
@@ -6628,6 +6640,7 @@ br {
 	}
 }
 
+/* Alternate left and right positions */
 .archive-post-listing:nth-child(even) {
 	flex-direction: row;
 }
@@ -6650,11 +6663,12 @@ br {
 	width: 100%;
 }
 
-/* Make headings smaller on mobile only */
-@media (max-width: 480px) {
+/* Make text smaller on mobile and tablet */
+@media (max-width: 1200px) {
 	.archive-post-listing h2 {
 		font-size: 2rem;
 		margin: 0.5rem;
+		color: #005500;
 	}
 	.archive-post-listing .post-meta {
 		font-size: 1rem;
@@ -6681,6 +6695,6 @@ br {
 	height: 100%;
 }
 
-.archive-post-listing figcaption, .archive-post-listing .entry-categories, .archive-post-listing .meta-icon {
+.archive-post-listing .post-comment-link, .archive-post-listing .post-sticky, .archive-post-listing figcaption, .archive-post-listing .entry-categories, .archive-post-listing .meta-icon {
 	display: none;
 }
