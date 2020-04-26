@@ -801,3 +801,18 @@ function recipeInstructions() {
         },\n";
 	};
 };
+
+// Breadcrumbs from Yoast
+
+add_theme_support( 'yoast-seo-breadcrumbs' );
+add_filter( 'wpseo_breadcrumb_single_link' ,'wpseo_remove_breadcrumb_link', 10 ,2);
+
+function wpseo_remove_breadcrumb_link( $link_output , $link ){
+    $text_to_remove = 'Blog';
+  
+    if( $link['text'] == $text_to_remove ) {
+      $link_output = '';
+    }
+ 
+    return $link_output;
+}
