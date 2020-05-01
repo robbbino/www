@@ -9,6 +9,7 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
       "@context": "https://schema.org/",
       "@type": "Recipe",
       "name": "<?php block_field( 'title' ) ?>",
+	  "description": "<?php echo get_the_excerpt() ?>",
       "image": [
         "<?php block_field( 'image' ) ?>"
       ],
@@ -18,9 +19,9 @@ wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/js/custom_
       },
       "datePublished": "<?php echo get_the_date( 'Y-m-d' ); ?>",
       "description": "<?php block_field( 'summary' ) ?>",
-      "prepTime": "<?php block_field( 'prep-time' ) ?>",
-      "cookTime": "<?php block_field( 'cook-time' ) ?>",
-      "totalTime": "<?php block_field( 'total-time' ) ?>",
+      "prepTime": "PT<?php block_field( 'prep-time' ) ?>M",
+      "cookTime": "PT<?php block_field( 'cook-time' ) ?>M",
+      "totalTime": "PT<?php block_field( 'total-time' ) ?>M",
       "keywords": "<?php block_field( 'keywords' ) ?>",
       "recipeYield": "<?php block_field( 'servings' ) ?>",
       "recipeCategory": "<?php block_field( 'category' ) ?>",
