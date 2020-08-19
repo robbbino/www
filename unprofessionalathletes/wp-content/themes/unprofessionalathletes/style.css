@@ -2582,6 +2582,7 @@ h2.entry-title {
 	left: calc(50% - 50vw);
 	width: 100vw;
 	max-height: 80vh;
+	margin: 1rem auto 10rem auto;
 }
 
 .singular .featured-media::before {
@@ -4740,7 +4741,7 @@ a.to-the-top > * {
 
 	h1,
 	.heading-size-1 {
-		font-size: 6.4rem;
+		font-size: 5rem;
 	}
 
 	h2,
@@ -4985,7 +4986,7 @@ a.to-the-top > * {
 	}
 
 	.archive-title {
-		font-size: 10rem;
+		font-size: 7rem;
 		line-height: 20rem;
 	}
 
@@ -4994,7 +4995,7 @@ a.to-the-top > * {
 	}
 
 	h2.entry-title {
-		font-size: 6.4rem;
+		font-size: 5rem;
 	}
 
 	/* SEARCH RESULTS */
@@ -6127,7 +6128,7 @@ a.to-the-top > * {
 
 	.wp-block-pullquote.alignwide blockquote p,
 	.wp-block-pullquote.alignfull blockquote p {
-		font-size: 6.4rem;
+		font-size: 5rem;
 	}
 
 	.wp-block-pullquote.is-style-solid-color.alignwide,
@@ -6637,6 +6638,8 @@ br {
 @media (min-width: 1220px) {
 	.archive-post-listing {
 		min-height: 30rem;
+		max-width: 140rem;
+		margin: 0 auto;
 	}
 }
 
