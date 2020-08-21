@@ -1018,7 +1018,7 @@ section {
 }
 
 .section-inner.medium {
-	max-width: 100rem;
+	max-width: 120rem;
 }
 
 .section-inner.no-margin {
@@ -2574,6 +2574,10 @@ h2.entry-title {
 	fill: currentColor;
 }
 
+li.post-sticky {
+	display: none !important; /* Remove the Sticky label on blog post in the meta section */
+}
+
 
 /* Featured Media ---------------------------- */
 
@@ -2654,11 +2658,19 @@ h2.entry-title {
 
 /* Author Bio -------------------------------- */
 
+
+.author-bio-wrap {
+	background-color: rgba(233, 219, 0, 0.2);
+	width: 100%;
+	max-width: 75rem;
+	padding: 2rem;
+	margin: 0 auto;
+}
 .author-bio {
-	margin-top: 4rem;
+/*	margin-top: 4rem;
 	margin-right: auto;
 	margin-left: auto;
-	max-width: 58rem;
+*/	max-width: 58rem;
 	width: 100%;
 }
 
@@ -2695,13 +2707,18 @@ h2.entry-title {
 	display: block;
 	font-size: 1.6rem;
 	font-weight: 600;
-	margin-top: 1em;
-	text-decoration: none;
+/*	margin-top: 1em;
+*/	text-decoration: none;
 }
 
 .author-bio .author-link:focus,
 .author-bio .author-link:hover {
 	text-decoration: underline;
+}
+
+.author-description {
+	font-size: smaller;
+	font-style: italic;
 }
 
 
@@ -3576,7 +3593,7 @@ figure.wp-block-table.is-style-stripes {
 /* Alignment Classes ------------------------- */
 
 .entry-content > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-	max-width: 58rem;
+	max-width: 75rem;
 	width: calc(100% - 4rem);
 }
 
@@ -5075,8 +5092,8 @@ a.to-the-top > * {
 	/* AUTHOR BIO */
 
 	.author-bio {
-		margin-top: 8rem;
-		min-height: 8rem;
+/*		margin-top: 8rem;
+*/		min-height: 8rem;
 		padding-left: 10rem;
 		position: relative;
 	}
@@ -6445,6 +6462,7 @@ body {
 
 .entry-header-unpro {
 	padding: 0;
+	margin-top: 3rem;
 }
 
 .footer-unpro {
