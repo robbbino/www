@@ -19,6 +19,8 @@ get_header();
 
 <main id="site-content" role="main">
 
+<!-- Add the Archive title -->
+
 	<?php
 
 	$archive_title    = '';
@@ -51,6 +53,7 @@ get_header();
 		$archive_title    = get_the_archive_title();
 		$archive_subtitle = get_the_archive_description();
 	}
+		
 
 	if ( $archive_title || $archive_subtitle ) {
 		?>
@@ -70,6 +73,8 @@ get_header();
 			</div><!-- .archive-header-inner -->
 
 		</header><!-- .archive-header -->
+<!-- End of Archive title -->
+
 
 		<?php
 	}
