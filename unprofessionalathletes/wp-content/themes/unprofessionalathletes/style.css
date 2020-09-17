@@ -2470,7 +2470,7 @@ h2.entry-title {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .intro-text {
@@ -6722,7 +6722,16 @@ br {
 
 .sticky .featured-media {
 	background-color: #efefef;
-	height: calc(100vh - 30rem) !important;
+	max-height: 120vh;
+	overflow: hidden;
+}
+
+.sticky .featured-media-inner {
+	max-width: 100% !important;
+}
+
+.sticky img {
+	width: 100%;
 }
 
 .sticky .entry-header-unpro {
@@ -6733,11 +6742,35 @@ br {
 	margin-bottom: 10rem;
 }
 
+.sticky .intro-text {
+	padding: 1rem 2rem;
+}
 
- /* Parallax base styles
+/* Make the headline float on top of the image for desktop */
+
+@media (min-width: 1200px) {
+	.sticky .entry-header-unpro {
+		position: absolute;
+		z-index: 100;
+		bottom: 0;
+		background-color: rgba(0, 85, 0, 0.5);
+	}
+	
+	.sticky .entry-title a, .sticky .post-meta {
+		color: #FFFFFF;
+	}
+	
+	.sticky .intro-text {
+		display: none;
+	}
+}
+
+ /* Parallax base styles (not working)
   --------------------------------------------- */
+  
+  /*
 
-  .parallax {
+  .parallax, .sticky {
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
@@ -6745,7 +6778,7 @@ br {
     perspective: 1px;
   }
 
-  .parallax__layer {
+  .parallax__layer, .sticky .featured-media, .sticky .entry-header-unpro{
     position: absolute;
     top: 0;
     left: 0;
@@ -6753,16 +6786,17 @@ br {
     bottom: 0;
   }
 
-  .parallax__layer--base {
+  .parallax__layer--base, .sticky .entry-header-unpro {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+	z-index: 100;
   }
 
-  .parallax__layer--back {
+  .parallax__layer--back, .sticky .featured-media {
     -webkit-transform: translateZ(-1px) scale(2);
     transform: translateZ(-1px) scale(2);
   }
-
+*/
 
 .archive-post-listing .entry-header-inner {
 	width: 100%;
@@ -6791,6 +6825,7 @@ br {
 .archive-post-listing img {
 	object-fit: cover;
     height: 100%;
+	width: 100%;
 }
 
 .archive-post-listing .featured-media-inner {

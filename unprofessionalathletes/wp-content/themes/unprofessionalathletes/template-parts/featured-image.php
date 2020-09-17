@@ -13,7 +13,7 @@
 
 	$featured_media_inner_classes = '';
 
-	// Make the featured media thinner on archive pages, plus give a random background colour that will be displayed if no image is selected.
+	// Make the featured media thinner on archive pages, plus give a random background colour that will be displayed if no image exists.
 	if ( ! is_singular() ) {
 		$background_colors = array('#65A9AC', '#005500', '#E9DB00', '#FF4500', '#9AB19A');
 		$rand_background = $background_colors[array_rand($background_colors)];

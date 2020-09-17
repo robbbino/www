@@ -1,4 +1,19 @@
+<?php
+		if ( is_sticky() && is_home() ) {
+			?>
+			<header class="archive-header has-text-align-center header-footer-group">
 
+			<div class="archive-header-inner section-inner medium">
+
+									<h2>Recent Posts</h2>
+				
+				
+			</div><!-- .archive-header-inner -->
+
+		</header>
+		<?php
+		}
+		?>
 
 <header class="entry-header-unpro has-text-align-center">
 
@@ -58,20 +73,7 @@
 		// Default to displaying the post meta.
 		twentytwenty_the_post_meta( get_the_ID(), 'single-top' );
 		
-		if ( is_sticky() && is_home() ) {
-			?>
-			<header class="archive-header has-text-align-center header-footer-group">
 
-			<div class="archive-header-inner section-inner medium">
-
-									<h2>Recent Posts</h2>
-				
-				
-			</div><!-- .archive-header-inner -->
-
-		</header>
-		<?php
-		}
 		?>
 
 	</div><!-- .entry-header-inner -->
