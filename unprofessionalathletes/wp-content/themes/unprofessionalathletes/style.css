@@ -19,6 +19,10 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned
 with others.
+
+
+NOTES (Unprofessional Athletes)
+1. 1rem = 10px
 */
 
 /*--------------------------------------------------------------
@@ -45,7 +49,8 @@ with others.
 	15. Widgets
 	16. Site Footer
 	17. Media Queries
-	18. Custom CSS
+	18. Post: Index
+	19. Custom CSS
 
 ----------------------------------------------------------------------------- */
 
@@ -2429,7 +2434,6 @@ body:not(.singular) main > article:first-of-type {
 
 .entry-categories {
 	line-height: 1.25;
-	margin-bottom: 2rem;
 }
 
 .entry-categories-inner {
@@ -2466,7 +2470,7 @@ h2.entry-title {
 
 .entry-title a:focus,
 .entry-title a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .intro-text {
@@ -6426,7 +6430,13 @@ a.to-the-top > * {
 
 /* -------------------------------------------------------------------------- */
 
-/*	18. Custom CSS (Unprofessional Athletes)
+/*	18. Post: Index
+/* -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	19. Custom CSS (Unprofessional Athletes)
 /* -------------------------------------------------------------------------- */
 
 /* Override defaults */
@@ -6652,10 +6662,10 @@ br {
 /*		INDEX & ARCHIVE PAGE
 /* -------------------------------------------------------------------------- */
 
-.archive-post-listing {
+.archive-post-listing:not(.sticky) {
 	display: flex;
 	flex-direction:row-reverse;
-	margin: 0;
+	margin: 0 auto;
 	background-color: #efefef;
 	padding: 0 !important;
 	min-height: 15rem;
@@ -6666,13 +6676,15 @@ br {
 @media (min-width: 1220px) {
 	.archive-post-listing {
 		min-height: 30rem;
-		max-width: 140rem;
 		margin: 0 auto;
+	}
+	.archive-post-listing:not(.sticky) {
+		max-width: 140rem;
 	}
 }
 
 /* Alternate left and right positions */
-.archive-post-listing:nth-child(even) {
+.archive-post-listing:not(.sticky):nth-child(even) {
 	flex-direction: row;
 }
 
@@ -6682,13 +6694,109 @@ br {
 }
 
 .archive-post-listing .entry-header-unpro {
+	padding: 2rem 0;
+}
+
+.archive-post-listing:not(.sticky) .entry-header-unpro {
 	width: 50%;
 	margin: 0;
 	display: flex;
 	align-items:center;
 	justify-content: center;
-	padding: 2rem 0;
 }
+
+/* Sticky settings */
+.sticky {
+	padding: 0 !important;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.sticky .entry-categories {
+	display: none;
+}
+
+.sticky .featured-media, .sticky .entry-header-unpro{
+	width: 100% !important;
+}
+
+.sticky .featured-media {
+	background-color: #efefef;
+	max-height: 120vh;
+	overflow: hidden;
+}
+
+.sticky .featured-media-inner {
+	max-width: 100% !important;
+}
+
+.sticky img {
+	width: 100%;
+}
+
+.sticky .entry-header-unpro {
+	padding: 5rem 0 0;
+}
+
+.sticky .post-meta-wrapper {
+	margin-bottom: 10rem;
+}
+
+.sticky .intro-text {
+	padding: 1rem 2rem;
+}
+
+/* Make the headline float on top of the image for desktop */
+
+@media (min-width: 1200px) {
+	.sticky .entry-header-unpro {
+		position: absolute;
+		z-index: 100;
+		bottom: 0;
+		background-color: rgba(0, 85, 0, 0.5);
+	}
+	
+	.sticky .entry-title a, .sticky .post-meta {
+		color: #FFFFFF;
+	}
+	
+	.sticky .intro-text {
+		display: none;
+	}
+}
+
+ /* Parallax base styles (not working)
+  --------------------------------------------- */
+  
+  /*
+
+  .parallax, .sticky {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-perspective: 1px;
+    perspective: 1px;
+  }
+
+  .parallax__layer, .sticky .featured-media, .sticky .entry-header-unpro{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .parallax__layer--base, .sticky .entry-header-unpro {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+	z-index: 100;
+  }
+
+  .parallax__layer--back, .sticky .featured-media {
+    -webkit-transform: translateZ(-1px) scale(2);
+    transform: translateZ(-1px) scale(2);
+  }
+*/
 
 .archive-post-listing .entry-header-inner {
 	width: 100%;
@@ -6701,7 +6809,7 @@ br {
 		color: #005500;
 	}
 	.archive-post-listing .post-meta {
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -6717,10 +6825,11 @@ br {
 .archive-post-listing img {
 	object-fit: cover;
     height: 100%;
+	width: 100%;
 }
 
 .archive-post-listing .featured-media-inner {
-	margin: 0;
+	margin: 0 auto;
 	width: 100%;
 	height: 100%;
 }
